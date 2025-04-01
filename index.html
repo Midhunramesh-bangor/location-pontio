@@ -14,6 +14,7 @@
       vr-mode-ui="enabled: false"
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
     >
+      <!-- 3D Model of Tree -->
       <a-asset-item 
         id="tree" 
         src="3d_location/scene.gltf">
@@ -25,10 +26,18 @@
         scale="1.6 1.6 1.6" 
         rotation="0 90 0" 
         gltf-model="#tree" 
-        
-        gps-entity-place="latitude:53.2299590; longitude:-4.1238065;">
+        gps-entity-place="latitude:53.2281681; longitude:-4.1299753;">
       </a-entity>
       
+      <!-- Text to Display -->
+      <a-text
+        value="This content will always face you."
+        look-at="[gps-camera]"
+        scale="1.6 1.6 1.6"
+        gps-entity-place="latitude:53.2281681; longitude:-4.1299753;">
+      </a-text>
+
+      <!-- Camera for GPS Tracking -->
       <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
   </body>
